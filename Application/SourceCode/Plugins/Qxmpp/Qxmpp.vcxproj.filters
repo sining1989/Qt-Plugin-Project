@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Header Files\base">
+      <UniqueIdentifier>{cd32b2f8-caac-4695-8008-e80a582b3846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client">
+      <UniqueIdentifier>{dcf6dcc7-18ed-43be-bf50-cfe525f6a681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\server">
+      <UniqueIdentifier>{20e34695-d4f8-4a08-b535-14c3b620cbce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{a41c3e9f-a59c-4bea-b555-03457739d401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client">
+      <UniqueIdentifier>{0da8d271-2946-44b2-8105-34714b363bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\server">
+      <UniqueIdentifier>{222cc2a4-d998-438a-bde9-353137df5f64}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base\QXmppArchiveIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppBindIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppBookmarkSet.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppByteStreamIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppCodec.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppConstants.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppDataForm.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppDiscoveryIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppElement.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppEntityTimeIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppIbbIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppJingleIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppLogger.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppMamIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppMessage.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppMucIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppNonSASLAuth.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppPingIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppPresence.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppPubSubIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppRegisterIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppResultSet.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppRosterIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppRpcIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppRtcpPacket.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppRtpChannel.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppRtpPacket.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppSasl.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppSessionIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppSocks.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppStanza.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppStream.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppStreamFeatures.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppStreamInitiationIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppStreamManagement.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppStun.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppUtils.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppVCardIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\QXmppVersionIq.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppArchiveManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppBookmarkManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppCallManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppCarbonManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppClient.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppClientExtension.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppConfiguration.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppDiscoveryManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppEntityTimeManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppInvokable.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppMamManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppMessageReceiptManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppMucManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppOutgoingClient.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppRemoteMethod.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppRosterManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppRpcManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppTransferManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppVCardManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="client\QXmppVersionManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppDialback.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppIncomingClient.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppIncomingServer.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppOutgoingServer.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppPasswordChecker.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppServer.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppServerExtension.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\QXmppServerPlugin.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\QXmppArchiveIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppBindIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppBookmarkSet.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppByteStreamIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppCodec_p.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppConstants_p.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppDataForm.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppDiscoveryIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppElement.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppEntityTimeIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppIbbIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppJingleIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppMamIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppMessage.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppMucIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppNonSASLAuth.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppPingIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppPresence.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppPubSubIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppRegisterIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppResultSet.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppRosterIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppRpcIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppRtcpPacket.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppRtpPacket.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppSasl_p.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppSessionIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppStanza.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppStanza_p.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppStreamFeatures.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppStreamInitiationIq_p.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppStreamManagement_p.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppUtils.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppVCardIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\QXmppVersionIq.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="client\QXmppConfiguration.h">
+      <Filter>Header Files\client</Filter>
+    </ClInclude>
+    <ClInclude Include="server\QXmppDialback.h">
+      <Filter>Header Files\server</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="base\QXmppLogger.h">
+      <Filter>Header Files\base</Filter>
+    </QtMoc>
+    <QtMoc Include="base\QXmppRtpChannel.h">
+      <Filter>Header Files\base</Filter>
+    </QtMoc>
+    <QtMoc Include="base\QXmppSocks.h">
+      <Filter>Header Files\base</Filter>
+    </QtMoc>
+    <QtMoc Include="base\QXmppStream.h">
+      <Filter>Header Files\base</Filter>
+    </QtMoc>
+    <QtMoc Include="base\QXmppStun.h">
+      <Filter>Header Files\base</Filter>
+    </QtMoc>
+    <QtMoc Include="base\QXmppStun_p.h">
+      <Filter>Header Files\base</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppArchiveManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppBookmarkManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppCallManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppCarbonManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppClient.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppClientExtension.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppDiscoveryManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppEntityTimeManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppInvokable.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppMamManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppMessageReceiptManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppMucManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppOutgoingClient.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppRemoteMethod.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppRosterManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppRpcManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppTransferManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppTransferManager_p.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppVCardManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="client\QXmppVersionManager.h">
+      <Filter>Header Files\client</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppIncomingClient.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppIncomingServer.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppOutgoingServer.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppPasswordChecker.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppServer.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppServerExtension.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+    <QtMoc Include="server\QXmppServerPlugin.h">
+      <Filter>Header Files\server</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base\QXmppGlobal.h">
+      <Filter>Header Files\base</Filter>
+    </None>
+  </ItemGroup>
+</Project>

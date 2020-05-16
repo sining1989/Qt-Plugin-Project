@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>opencvPanelClass</class>
+ <widget class="QMainWindow" name="opencvPanelClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>10</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="toolTipDuration">
+   <number>1</number>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>22</width>
+    <height>22</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="tip1">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>微软雅黑</family>
+                  <pointsize>10</pointsize>
+                  <weight>50</weight>
+                  <italic>false</italic>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="mouseTracking">
+                 <bool>true</bool>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::AutoText</enum>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="tip2">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_1">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QLabel" name="tip3">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_thresh">
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="thresh_Slider">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>254</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="value">
+               <number>128</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spinBox">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="singleStep">
+               <number>10</number>
+              </property>
+              <property name="value">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_thresh_1">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="thresh_Slider_1">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="value">
+               <number>128</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox1">
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>矩形（默认内核形状）</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>交叉形</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>椭圆形</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox2">
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>18</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_time">
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>506</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>开始</string>
+    </property>
+    <addaction name="open_image"/>
+    <addaction name="save_image"/>
+    <addaction name="print_image"/>
+    <addaction name="camera_image"/>
+    <addaction name="exit_image"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>图像预处理</string>
+    </property>
+    <addaction name="togray"/>
+    <addaction name="tobinary_before"/>
+    <addaction name="contrast_image"/>
+    <addaction name="histogram_equalization"/>
+    <addaction name="action_ROI"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>形态学操作</string>
+    </property>
+    <addaction name="dilate_image"/>
+    <addaction name="erode_image"/>
+    <addaction name="opening_image"/>
+    <addaction name="closing_image"/>
+    <addaction name="gradient_image"/>
+    <addaction name="tophat_image"/>
+    <addaction name="blackhat_image"/>
+    <addaction name="hole_fill"/>
+    <addaction name="deduct_small_area"/>
+    <addaction name="Reconstruct_action"/>
+    <addaction name="contours_describe"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>图像分割</string>
+    </property>
+    <widget class="QMenu" name="menu_5">
+     <property name="title">
+      <string>基于边缘检测的分割</string>
+     </property>
+     <addaction name="actionCanny"/>
+     <addaction name="actionSobel"/>
+     <addaction name="actionLaplacian"/>
+    </widget>
+    <widget class="QMenu" name="menu_6">
+     <property name="title">
+      <string>基于区域的分割</string>
+     </property>
+     <addaction name="region_grow"/>
+    </widget>
+    <widget class="QMenu" name="menu_8">
+     <property name="title">
+      <string>基于图论的分割</string>
+     </property>
+     <addaction name="GrabCut"/>
+    </widget>
+    <widget class="QMenu" name="menu_9">
+     <property name="title">
+      <string>基于阈值的分割</string>
+     </property>
+     <addaction name="OTSU_2"/>
+    </widget>
+    <widget class="QMenu" name="menu_10">
+     <property name="title">
+      <string>基于形态学的分割</string>
+     </property>
+     <addaction name="watershed_2"/>
+    </widget>
+    <widget class="QMenu" name="menu_11">
+     <property name="title">
+      <string>基于活动轮廓模型的分割</string>
+     </property>
+     <addaction name="actionSnake"/>
+     <addaction name="actionLever_set"/>
+    </widget>
+    <widget class="QMenu" name="menu_12">
+     <property name="title">
+      <string>基于聚类的分割</string>
+     </property>
+     <addaction name="action_K_Means"/>
+     <addaction name="action_FCM"/>
+    </widget>
+    <addaction name="menu_9"/>
+    <addaction name="menu_10"/>
+    <addaction name="menu_5"/>
+    <addaction name="menu_6"/>
+    <addaction name="menu_8"/>
+    <addaction name="menu_12"/>
+    <addaction name="menu_11"/>
+   </widget>
+   <widget class="QMenu" name="menu_7">
+    <property name="title">
+     <string>图像滤波</string>
+    </property>
+    <addaction name="BoxFilter"/>
+    <addaction name="MeanBlur"/>
+    <addaction name="GaussianBlur"/>
+    <addaction name="MedianBlur"/>
+    <addaction name="BilateralFilter"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_7"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>18</width>
+     <height>18</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="open_action"/>
+   <addaction name="save_action"/>
+   <addaction name="print_image_action"/>
+   <addaction name="camera_action"/>
+   <addaction name="ROI_action"/>
+   <addaction name="seed_action"/>
+   <addaction name="zoom_in"/>
+   <addaction name="zoom_out"/>
+   <addaction name="init_image"/>
+   <addaction name="repeal_image"/>
+   <addaction name="OK_image"/>
+  </widget>
+  <action name="open_image">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Resources/opencv/open.png</normaloff>../Resources/opencv/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="save_image">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Resources/opencv/save.png</normaloff>../Resources/opencv/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="togray">
+   <property name="text">
+    <string>灰度化 </string>
+   </property>
+  </action>
+  <action name="exit_image">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Resources/opencv/exit.png</normaloff>../Resources/opencv/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出系统</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Esc</string>
+   </property>
+  </action>
+  <action name="print_image">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Resources/opencv/printImage.png</normaloff>../Resources/opencv/printImage.png</iconset>
+   </property>
+   <property name="text">
+    <string>打印图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="dilate_image">
+   <property name="text">
+    <string>膨胀</string>
+   </property>
+  </action>
+  <action name="erode_image">
+   <property name="text">
+    <string>腐蚀</string>
+   </property>
+  </action>
+  <action name="opening_image">
+   <property name="text">
+    <string>开运算</string>
+   </property>
+  </action>
+  <action name="closing_image">
+   <property name="text">
+    <string>闭运算</string>
+   </property>
+  </action>
+  <action name="gradient_image">
+   <property name="text">
+    <string>梯度运算</string>
+   </property>
+  </action>
+  <action name="tophat_image">
+   <property name="text">
+    <string>顶帽运算</string>
+   </property>
+  </action>
+  <action name="blackhat_image">
+   <property name="text">
+    <string>黑帽运算</string>
+   </property>
+  </action>
+  <action name="repeal_image">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/repeal.png</normaloff>:/opencv/repeal.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="init_image">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/undo.png</normaloff>:/opencv/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>重做</string>
+   </property>
+   <property name="toolTip">
+    <string>重做</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="hole_fill">
+   <property name="text">
+    <string>孔洞填充</string>
+   </property>
+  </action>
+  <action name="contrast_image">
+   <property name="text">
+    <string>对比度和亮度</string>
+   </property>
+  </action>
+  <action name="histogram_equalization">
+   <property name="text">
+    <string>直方图均衡化</string>
+   </property>
+  </action>
+  <action name="OK_image">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/ok.png</normaloff>:/opencv/ok.png</iconset>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+   <property name="toolTip">
+    <string>确定</string>
+   </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
+  </action>
+  <action name="print_image_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/printImage.png</normaloff>:/opencv/printImage.png</iconset>
+   </property>
+   <property name="text">
+    <string>打印</string>
+   </property>
+   <property name="toolTip">
+    <string>打印</string>
+   </property>
+  </action>
+  <action name="open_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/open.png</normaloff>:/opencv/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="toolTip">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="save_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/save.png</normaloff>:/opencv/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="toolTip">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="tobinary_before">
+   <property name="text">
+    <string>二值化</string>
+   </property>
+  </action>
+  <action name="camera_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/video_camera.png</normaloff>:/opencv/video_camera.png</iconset>
+   </property>
+   <property name="text">
+    <string>摄像头</string>
+   </property>
+   <property name="toolTip">
+    <string>摄像头</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="camera_image">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Resources/opencv/video_camera.png</normaloff>../Resources/opencv/video_camera.png</iconset>
+   </property>
+   <property name="text">
+    <string>调用摄像头</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="contours_describe">
+   <property name="text">
+    <string>轮廓提取与描述</string>
+   </property>
+  </action>
+  <action name="zoom_in">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/Zoom_in.png</normaloff>:/opencv/Zoom_in.png</iconset>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="toolTip">
+    <string>放大</string>
+   </property>
+  </action>
+  <action name="zoom_out">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/Zoom_out_.png</normaloff>:/opencv/Zoom_out_.png</iconset>
+   </property>
+   <property name="text">
+    <string>缩小</string>
+   </property>
+   <property name="toolTip">
+    <string>缩小</string>
+   </property>
+  </action>
+  <action name="information_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/info.png</normaloff>:/opencv/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>帮助</string>
+   </property>
+   <property name="toolTip">
+    <string>帮助</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="deduct_small_area">
+   <property name="text">
+    <string>去除小区域</string>
+   </property>
+  </action>
+  <action name="seed_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/seed.png</normaloff>:/opencv/seed.png</iconset>
+   </property>
+   <property name="text">
+    <string>种子</string>
+   </property>
+   <property name="toolTip">
+    <string>设当前图像为种子图像或标记图像</string>
+   </property>
+  </action>
+  <action name="ROI_action">
+   <property name="icon">
+    <iconset resource="../Resources/generalDemo.qrc">
+     <normaloff>:/opencv/ROI.png</normaloff>:/opencv/ROI.png</iconset>
+   </property>
+   <property name="text">
+    <string>ROI</string>
+   </property>
+   <property name="toolTip">
+    <string>设置ROI区域</string>
+   </property>
+  </action>
+  <action name="action_ROI">
+   <property name="text">
+    <string>设置ROI区域</string>
+   </property>
+  </action>
+  <action name="Reconstruct_action">
+   <property name="text">
+    <string>形态学重构</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny算子</string>
+   </property>
+   <property name="toolTip">
+    <string>Canny算子</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>Sobel算子</string>
+   </property>
+   <property name="toolTip">
+    <string>Sobel算子</string>
+   </property>
+  </action>
+  <action name="actionLaplacian">
+   <property name="text">
+    <string>Laplacian算子</string>
+   </property>
+   <property name="toolTip">
+    <string>Laplacian算子</string>
+   </property>
+  </action>
+  <action name="region_grow">
+   <property name="text">
+    <string>区域生长法</string>
+   </property>
+   <property name="toolTip">
+    <string>区域生长法</string>
+   </property>
+  </action>
+  <action name="spilt_combine">
+   <property name="text">
+    <string>分裂合并法</string>
+   </property>
+   <property name="toolTip">
+    <string>分裂合并法</string>
+   </property>
+  </action>
+  <action name="BoxFilter">
+   <property name="text">
+    <string>方框滤波</string>
+   </property>
+   <property name="toolTip">
+    <string>使用方框滤波器来模糊一张图片</string>
+   </property>
+  </action>
+  <action name="MeanBlur">
+   <property name="text">
+    <string>均值滤波</string>
+   </property>
+  </action>
+  <action name="GaussianBlur">
+   <property name="text">
+    <string>高斯滤波</string>
+   </property>
+  </action>
+  <action name="MedianBlur">
+   <property name="text">
+    <string>中值滤波</string>
+   </property>
+  </action>
+  <action name="BilateralFilter">
+   <property name="text">
+    <string>双边滤波</string>
+   </property>
+  </action>
+  <action name="GrabCut">
+   <property name="text">
+    <string>GrabCut</string>
+   </property>
+   <property name="toolTip">
+    <string>GrabCut</string>
+   </property>
+  </action>
+  <action name="OTSU_2">
+   <property name="text">
+    <string>大津法</string>
+   </property>
+   <property name="toolTip">
+    <string>大津法</string>
+   </property>
+  </action>
+  <action name="watershed_2">
+   <property name="text">
+    <string>分水岭算法</string>
+   </property>
+   <property name="toolTip">
+    <string>分水岭算法</string>
+   </property>
+  </action>
+  <action name="actionLever_set">
+   <property name="text">
+    <string>Lever set--DRLSE</string>
+   </property>
+  </action>
+  <action name="action_FCM">
+   <property name="text">
+    <string>FCM</string>
+   </property>
+  </action>
+  <action name="action_K_Means">
+   <property name="text">
+    <string>K-Means</string>
+   </property>
+  </action>
+  <action name="actionSnake">
+   <property name="text">
+    <string>Snake</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../Resources/generalDemo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

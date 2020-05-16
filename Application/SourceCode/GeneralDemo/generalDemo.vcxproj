@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>GeneralDemo</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\$(Configuration)\</OutDir>
+    <IntDir>..\..\Intermediate\$ProjectName\</IntDir>
+    <IncludePath>D:\OpenCV\opencv\build\include;D:\OpenCV\opencv\build\include\opencv2;D:\Program Files\PCL 1.8.1\include\pcl-1.8;D:\Program Files\PCL 1.8.1\3rdParty\Boost\include\boost-1_64;D:\Program Files\PCL 1.8.1\3rdParty\Eigen\eigen3;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\include;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\include;D:\Program Files\PCL 1.8.1\3rdParty\OpenNI2\Include;D:\Program Files\PCL 1.8.1\3rdParty\VTK\include\vtk-8.0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\OpenCV\opencv\build\x64\vc14\lib;D:\Program Files\PCL 1.8.1\lib;D:\Program Files\PCL 1.8.1\3rdParty\FLANN\lib;D:\Program Files\PCL 1.8.1\3rdParty\Boost\lib;D:\Program Files\PCL 1.8.1\3rdParty\Qhull\lib;D:\Program Files\PCL 1.8.1\3rdParty\OpenNI2\Lib;D:\Program Files\PCL 1.8.1\3rdParty\VTK\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\$(Configuration)\</OutDir>
+    <IntDir>..\..\Intermediate\$ProjectName\</IntDir>
+    <IncludePath>D:\OpenCV\opencv\build\include;D:\OpenCV\opencv\build\include\opencv;D:\OpenCV\opencv\build\include\opencv2;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\OpenCV\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_WEBSOCKETS_LIB;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINECORE_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_PRINTSUPPORT_LIB;QT_WEBENGINE_LIB;QT_QML_LIB;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;PCL_NO_PRECOMPILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtQml;Include;Include\Common;Include\Qxmpp\base;Include\Qxmpp\client;Include\Qxmpp\server;Include\Qmqtt;Include\OpenGL;Include\dragdroprobot;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5WebSocketsd.lib;Qt5WebEngineWidgetsd.lib;Qt5WebEngineCored.lib;Qt5Widgetsd.lib;Qt5Xmld.lib;Qt5Networkd.lib;Qt5OpenGLExtensionsd.lib;Qt5PrintSupportd.lib;Qt5WebEngined.lib;Qt5Qmld.lib;Qt5OpenGLd.lib;opencv_world411d.lib;opengl32.lib;glu32.lib;pcl_common_debug.lib;pcl_features_debug.lib;pcl_filters_debug.lib;pcl_io_debug.lib;pcl_io_ply_debug.lib;pcl_kdtree_debug.lib;pcl_keypoints_debug.lib;pcl_ml_debug.lib;pcl_octree_debug.lib;pcl_outofcore_debug.lib;pcl_people_debug.lib;pcl_recognition_debug.lib;pcl_registration_debug.lib;pcl_sample_consensus_debug.lib;pcl_search_debug.lib;pcl_segmentation_debug.lib;pcl_stereo_debug.lib;pcl_surface_debug.lib;pcl_tracking_debug.lib;pcl_visualization_debug.lib;flann_cpp_s-gd.lib;flann_cpp-gd.lib;flann_s-gd.lib;flann-gd.lib;libboost_atomic-vc141-mt-gd-1_64.lib;libboost_bzip2-vc141-mt-gd-1_64.lib;libboost_chrono-vc141-mt-gd-1_64.lib;libboost_container-vc141-mt-gd-1_64.lib;libboost_context-vc141-mt-gd-1_64.lib;libboost_coroutine-vc141-mt-gd-1_64.lib;libboost_date_time-vc141-mt-gd-1_64.lib;libboost_exception-vc141-mt-gd-1_64.lib;libboost_fiber-vc141-mt-gd-1_64.lib;libboost_filesystem-vc141-mt-gd-1_64.lib;libboost_graph_parallel-vc141-mt-gd-1_64.lib;libboost_graph-vc141-mt-gd-1_64.lib;libboost_iostreams-vc141-mt-gd-1_64.lib;libboost_locale-vc141-mt-gd-1_64.lib;libboost_log_setup-vc141-mt-gd-1_64.lib;libboost_log-vc141-mt-gd-1_64.lib;libboost_math_c99f-vc141-mt-gd-1_64.lib;libboost_math_c99l-vc141-mt-gd-1_64.lib;libboost_math_c99-vc141-mt-gd-1_64.lib;libboost_math_tr1f-vc141-mt-gd-1_64.lib;libboost_math_tr1l-vc141-mt-gd-1_64.lib;libboost_math_tr1-vc141-mt-gd-1_64.lib;libboost_mpi-vc141-mt-gd-1_64.lib;libboost_numpy3-vc141-mt-gd-1_64.lib;libboost_numpy-vc141-mt-gd-1_64.lib;libboost_prg_exec_monitor-vc141-mt-gd-1_64.lib;libboost_program_options-vc141-mt-gd-1_64.lib;libboost_python3-vc141-mt-gd-1_64.lib;libboost_python-vc141-mt-gd-1_64.lib;libboost_random-vc141-mt-gd-1_64.lib;libboost_regex-vc141-mt-gd-1_64.lib;libboost_serialization-vc141-mt-gd-1_64.lib;libboost_signals-vc141-mt-gd-1_64.lib;libboost_system-vc141-mt-gd-1_64.lib;libboost_test_exec_monitor-vc141-mt-gd-1_64.lib;libboost_thread-vc141-mt-gd-1_64.lib;libboost_timer-vc141-mt-gd-1_64.lib;libboost_type_erasure-vc141-mt-gd-1_64.lib;libboost_unit_test_framework-vc141-mt-gd-1_64.lib;libboost_wave-vc141-mt-gd-1_64.lib;libboost_wserialization-vc141-mt-gd-1_64.lib;libboost_zlib-vc141-mt-gd-1_64.lib;qhull_d.lib;qhull_p_d.lib;qhull_r_d.lib;qhullcpp_d.lib;qhullstatic_d.lib;qhullstatic_r_d.lib;OpenNI2.lib;vtkalglib-8.0.lib;vtkChartsCore-8.0.lib;vtkCommonColor-8.0.lib;vtkCommonComputationalGeometry-8.0.lib;vtkCommonCore-8.0.lib;vtkCommonDataModel-8.0.lib;vtkCommonExecutionModel-8.0.lib;vtkCommonMath-8.0.lib;vtkCommonMisc-8.0.lib;vtkCommonSystem-8.0.lib;vtkCommonTransforms-8.0.lib;vtkDICOMParser-8.0.lib;vtkDomainsChemistry-8.0.lib;vtkDomainsChemistryOpenGL2-8.0.lib;vtkexoIIc-8.0.lib;vtkexpat-8.0.lib;vtkFiltersAMR-8.0.lib;vtkFiltersCore-8.0.lib;vtkFiltersExtraction-8.0.lib;vtkFiltersFlowPaths-8.0.lib;vtkFiltersGeneral-8.0.lib;vtkFiltersGeneric-8.0.lib;vtkFiltersGeometry-8.0.lib;vtkFiltersHybrid-8.0.lib;vtkFiltersHyperTree-8.0.lib;vtkFiltersImaging-8.0.lib;vtkFiltersModeling-8.0.lib;vtkFiltersParallel-8.0.lib;vtkFiltersParallelImaging-8.0.lib;vtkFiltersPoints-8.0.lib;vtkFiltersProgrammable-8.0.lib;vtkFiltersSelection-8.0.lib;vtkFiltersSMP-8.0.lib;vtkFiltersSources-8.0.lib;vtkFiltersStatistics-8.0.lib;vtkFiltersTexture-8.0.lib;vtkFiltersTopology-8.0.lib;vtkFiltersVerdict-8.0.lib;vtkfreetype-8.0.lib;vtkGeovisCore-8.0.lib;vtkgl2ps-8.0.lib;vtkglew-8.0.lib;vtkGUISupportQt-8.0.lib;vtkGUISupportQtSQL-8.0.lib;vtkhdf5_hl-8.0.lib;vtkhdf5-8.0.lib;vtkImagingColor-8.0.lib;vtkImagingCore-8.0.lib;vtkImagingFourier-8.0.lib;vtkImagingGeneral-8.0.lib;vtkImagingHybrid-8.0.lib;vtkImagingMath-8.0.lib;vtkImagingMorphological-8.0.lib;vtkImagingSources-8.0.lib;vtkImagingStatistics-8.0.lib;vtkImagingStencil-8.0.lib;vtkInfovisCore-8.0.lib;vtkInfovisLayout-8.0.lib;vtkInteractionImage-8.0.lib;vtkInteractionStyle-8.0.lib;vtkInteractionWidgets-8.0.lib;vtkIOAMR-8.0.lib;vtkIOCore-8.0.lib;vtkIOEnSight-8.0.lib;vtkIOExodus-8.0.lib;vtkIOExport-8.0.lib;vtkIOExportOpenGL2-8.0.lib;vtkIOGeometry-8.0.lib;vtkIOImage-8.0.lib;vtkIOImport-8.0.lib;vtkIOInfovis-8.0.lib;vtkIOLegacy-8.0.lib;vtkIOLSDyna-8.0.lib;vtkIOMINC-8.0.lib;vtkIOMovie-8.0.lib;vtkIONetCDF-8.0.lib;vtkIOParallel-8.0.lib;vtkIOParallelXML-8.0.lib;vtkIOPLY-8.0.lib;vtkIOSQL-8.0.lib;vtkIOTecplotTable-8.0.lib;vtkIOVideo-8.0.lib;vtkIOXML-8.0.lib;vtkIOXMLParser-8.0.lib;vtkjpeg-8.0.lib;vtkjsoncpp-8.0.lib;vtklibharu-8.0.lib;vtklibxml2-8.0.lib;vtklz4-8.0.lib;vtkmetaio-8.0.lib;vtknetcdf_c++.lib;vtkNetCDF-8.0.lib;vtkoggtheora-8.0.lib;vtkParallelCore-8.0.lib;vtkpng-8.0.lib;vtkproj4-8.0.lib;vtkRenderingAnnotation-8.0.lib;vtkRenderingContext2D-8.0.lib;vtkRenderingContextOpenGL2-8.0.lib;vtkRenderingCore-8.0.lib;vtkRenderingFreeType-8.0.lib;vtkRenderingGL2PSOpenGL2-8.0.lib;vtkRenderingImage-8.0.lib;vtkRenderingLabel-8.0.lib;vtkRenderingLOD-8.0.lib;vtkRenderingOpenGL2-8.0.lib;vtkRenderingQt-8.0.lib;vtkRenderingVolume-8.0.lib;vtkRenderingVolumeOpenGL2-8.0.lib;vtksqlite-8.0.lib;vtksys-8.0.lib;vtkTestingGenericBridge-8.0.lib;vtkTestingIOSQL-8.0.lib;vtkTestingRendering-8.0.lib;vtktiff-8.0.lib;vtkverdict-8.0.lib;vtkViewsContext2D-8.0.lib;vtkViewsCore-8.0.lib;vtkViewsInfovis-8.0.lib;vtkViewsQt-8.0.lib;vtkzlib-8.0.lib;QVTKWidgetPlugin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtQml;Include;Include\Common;Include\Qxmpp\base;Include\Qxmpp\client;Include\Qxmpp\server;Include\Qmqtt;Include\OpenGL;Include\dragdroprobot;..\SDK\gl;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_WEBSOCKETS_LIB;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINECORE_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_PRINTSUPPORT_LIB;QT_WEBENGINE_LIB;QT_QML_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WEBSOCKETS_LIB;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINECORE_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_PRINTSUPPORT_LIB;QT_WEBENGINE_LIB;QT_QML_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;Include;Include\Common;Include\Qxmpp\base;..\Plugins\Qmqtt;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtQml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;..\Lib;C:\Users\Administrator\Desktop\Application\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5WebSockets.lib;Qt5WebEngineWidgets.lib;Qt5WebEngineCore.lib;Qt5Widgets.lib;Qt5Xml.lib;Qt5Network.lib;qmqtt.lib;opencv_world411.lib;Qt5OpenGL.lib;Qt5OpenGLExtensions.lib;Qt5PrintSupport.lib;Qt5WebEngine.lib;Qt5Qml.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;Include;Include\Common;Include\Qxmpp\base;..\Plugins\Qmqtt;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtQml;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WEBSOCKETS_LIB;QT_WEBENGINEWIDGETS_LIB;QT_WEBENGINECORE_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_PRINTSUPPORT_LIB;QT_WEBENGINE_LIB;QT_QML_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </ClCompile>
+    <ClCompile Include="PluginsManager\plugin_manager_private.cpp" />
+    <ClCompile Include="PluginsManager\plugin_manager.cpp" />
+    <ClCompile Include="Source\Common\ccolorfulwidget.cpp" />
+    <ClCompile Include="Source\Common\cfreesizewidget.cpp" />
+    <ClCompile Include="Source\Common\common.cpp" />
+    <ClCompile Include="Source\Common\config.cpp" />
+    <ClCompile Include="Source\Common\csystemsetting.cpp" />
+    <ClCompile Include="Source\Common\drop_shadow_widget.cpp" />
+    <ClCompile Include="Source\configinfo.cpp" />
+    <ClCompile Include="Source\dragdroprobot\coloritem.cpp" />
+    <ClCompile Include="Source\dragdroprobot\robot.cpp" />
+    <ClCompile Include="Source\function_panel.cpp" />
+    <ClCompile Include="Source\ims_panel.cpp" />
+    <ClCompile Include="Source\opencv_panel.cpp" />
+    <ClCompile Include="Source\vtk_view_panel.cpp" />
+    <ClCompile Include="Source\other_panel.cpp" />
+    <ClCompile Include="Source\paintlabel.cpp" />
+    <ClCompile Include="Source\panel.cpp" />
+    <ClCompile Include="Source\panel_dock_widget.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_client.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_client_p.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_frame.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_message.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_network.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_router.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_routesubscription.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_socket.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_ssl_socket.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_timer.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_websocket.cpp" />
+    <ClCompile Include="Source\Qmqtt\qmqtt_websocketiodevice.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppArchiveIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppBindIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppBookmarkSet.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppByteStreamIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppCodec.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppConstants.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppDataForm.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppDiscoveryIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppElement.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppEntityTimeIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppIbbIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppJingleIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppLogger.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppMamIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppMessage.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppMucIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppNonSASLAuth.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppPingIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppPresence.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppPubSubIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppRegisterIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppResultSet.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppRosterIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppRpcIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppRtcpPacket.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppRtpChannel.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppRtpPacket.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppSasl.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppSessionIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppSocks.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppStanza.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppStream.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppStreamFeatures.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppStreamInitiationIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppStreamManagement.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppStun.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppUtils.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppVCardIq.cpp" />
+    <ClCompile Include="Source\qxmpp\base\QXmppVersionIq.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppArchiveManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppBookmarkManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppCallManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppCarbonManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppClient.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppClientExtension.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppConfiguration.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppDiscoveryManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppEntityTimeManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppInvokable.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppMamManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppMessageReceiptManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppMucManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppOutgoingClient.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppRemoteMethod.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppRosterManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppRpcManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppTransferManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppVCardManager.cpp" />
+    <ClCompile Include="Source\qxmpp\client\QXmppVersionManager.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppDialback.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppIncomingClient.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppIncomingServer.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppOutgoingServer.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppPasswordChecker.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppServer.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppServerExtension.cpp" />
+    <ClCompile Include="Source\qxmpp\server\QXmppServerPlugin.cpp" />
+    <ClCompile Include="Source\robot_panel.cpp" />
+    <ClCompile Include="Source\scaled_image_widget.cpp" />
+    <ClCompile Include="Source\screenshot_dialog.cpp" />
+    <ClCompile Include="Source\setting_panel.cpp" />
+    <ClCompile Include="Source\tool_button.cpp" />
+    <ClCompile Include="Source\visualization_frame.cpp" />
+    <ClCompile Include="Source\visualizer_app.cpp" />
+    <ClCompile Include="Source\webengine_panel.cpp" />
+    <ClCompile Include="Source\widget_geometry_change_detector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\ims.ui" />
+    <QtUic Include="UI\opencv.ui" />
+    <QtUic Include="UI\setting.ui" />
+    <QtUic Include="vtk_view.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\class_id_recording_factory.h" />
+    <QtMoc Include="Include\vtk_view_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtQml;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt;.\Include\OpenGL;.\Include\dragdroprobot</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtQml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\other_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtWebEngine</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Common\ccolorfulwidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Common\cfreesizewidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\Common\common.h" />
+    <ClInclude Include="Include\Common\common_config.h" />
+    <ClInclude Include="Include\Common\config.h" />
+    <QtMoc Include="Include\Common\csystemsetting.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Common\drop_shadow_widget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt;$(QTDIR)\include\QtQml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtQml</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\configinfo.h" />
+    <ClInclude Include="Include\dragdroprobot\coloritem.h" />
+    <ClInclude Include="Include\dragdroprobot\robot.h" />
+    <ClInclude Include="Include\factory.h" />
+    <QtMoc Include="Include\function_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\ims_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\load_resource.h" />
+    <QtMoc Include="Include\paintlabel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\panel_dock_widget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\opencv_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\pluginlib_factory.h" />
+    <QtMoc Include="Include\robot_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\scaled_image_widget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\screenshot_dialog.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\setting_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\visualization_frame.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\visualizer_app.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\widget_geometry_change_detector.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\Qmqtt\qmqtt.h" />
+    <QtMoc Include="Include\Qmqtt\qmqtt_client.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\Qmqtt\qmqtt_client_p.h" />
+    <ClInclude Include="Include\Qmqtt\qmqtt_frame.h" />
+    <ClInclude Include="Include\Qmqtt\qmqtt_message.h" />
+    <ClInclude Include="Include\Qmqtt\qmqtt_message_p.h" />
+    <QtMoc Include="Include\Qmqtt\qmqtt_network_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_networkinterface.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\Qmqtt\qmqtt_routedmessage.h" />
+    <QtMoc Include="Include\Qmqtt\qmqtt_router.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_routesubscription.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_socket_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_socketinterface.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_ssl_socket_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_timer_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_timerinterface.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_websocket_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\Qmqtt\qmqtt_websocketiodevice_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\base\QXmppArchiveIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppBindIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppBookmarkSet.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppByteStreamIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppCodec_p.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppConstants_p.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppDataForm.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppDiscoveryIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppElement.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppEntityTimeIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppGlobal.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppIbbIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppJingleIq.h" />
+    <QtMoc Include="Include\qxmpp\base\QXmppLogger.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\base\QXmppMamIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppMessage.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppMucIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppNonSASLAuth.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppPingIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppPresence.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppPubSubIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppRegisterIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppResultSet.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppRosterIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppRpcIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppRtcpPacket.h" />
+    <QtMoc Include="Include\qxmpp\base\QXmppRtpChannel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\base\QXmppRtpPacket.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppSasl_p.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppSessionIq.h" />
+    <QtMoc Include="Include\qxmpp\base\QXmppSocks.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\base\QXmppStanza.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppStanza_p.h" />
+    <QtMoc Include="Include\qxmpp\base\QXmppStream.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\base\QXmppStreamFeatures.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppStreamInitiationIq_p.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppStreamManagement_p.h" />
+    <QtMoc Include="Include\qxmpp\base\QXmppStun.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\base\QXmppStun_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\base\QXmppUtils.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppVCardIq.h" />
+    <ClInclude Include="Include\qxmpp\base\QXmppVersionIq.h" />
+    <QtMoc Include="Include\qxmpp\client\QXmppArchiveManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppBookmarkManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppCallManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppCarbonManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppClient.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppClientExtension.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\client\QXmppConfiguration.h" />
+    <QtMoc Include="Include\qxmpp\client\QXmppDiscoveryManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppEntityTimeManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppInvokable.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppMamManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppMessageReceiptManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppMucManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppOutgoingClient.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppRemoteMethod.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppRosterManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppRpcManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppTransferManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppTransferManager_p.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppVCardManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\client\QXmppVersionManager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\qxmpp\server\QXmppDialback.h" />
+    <QtMoc Include="Include\qxmpp\server\QXmppIncomingClient.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\server\QXmppIncomingServer.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\server\QXmppOutgoingServer.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\server\QXmppPasswordChecker.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\server\QXmppServer.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\server\QXmppServerExtension.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Include\qxmpp\server\QXmppServerPlugin.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qmqtt;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\base;C:\Users\Administrator\Desktop\Application\SourceCode\Plugins\Qxmpp\client</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;.\Include;.\Include\Common;.\Include\Qxmpp\base;$(QTDIR)\include\QtNetwork</IncludePath>
+    </QtMoc>
+    <QtMoc Include="mqtt_publisher.hpp">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <QtMoc Include="mqtt_subscriber.hpp">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt</IncludePath>
+    </QtMoc>
+    <ClInclude Include="Include\tool_button.h" />
+    <QtMoc Include="Include\webengine_panel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\Include\Qxmpp\client;.\Include\Qxmpp\server;.\Include\Qmqtt</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtNetwork;.\Include;.\Include\Common;.\Include\Qxmpp\base;.\..\Plugins\Qmqtt;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtWebEngine</IncludePath>
+    </QtMoc>
+    <ClInclude Include="PluginsManager\interface_plugin.h" />
+    <ClInclude Include="PluginsManager\plugin_manager_private.h" />
+    <ClInclude Include="PluginsManager\plugin_meta_data.h" />
+    <QtMoc Include="PluginsManager\plugin_manager.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtWebSockets;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtXml</IncludePath>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Resources\generalDemo.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="generaldemo_en.ts" />
+    <None Include="lang_zh_CN.ts" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2015_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

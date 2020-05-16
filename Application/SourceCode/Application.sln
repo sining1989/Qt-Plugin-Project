@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeneralDemo", "generalDemo\generalDemo.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoLibraryB", "Plugins\DemoLibraryB\DemoLibraryB.vcxproj", "{E49EC05F-43C4-4B6D-8233-13B2EF190452}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoLibraryA", "Plugins\DemoLibraryA\DemoLibraryA.vcxproj", "{FFED8F5A-6CE9-4666-B6AE-00B6B4BCE8D7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qxmpp", "Plugins\Qxmpp\Qxmpp.vcxproj", "{D33D65A1-4BFE-4B3D-AB48-1A0D684E2BB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.ActiveCfg = Debug|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.Build.0 = Debug|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
+		{E49EC05F-43C4-4B6D-8233-13B2EF190452}.Debug|x64.ActiveCfg = Debug|x64
+		{E49EC05F-43C4-4B6D-8233-13B2EF190452}.Debug|x64.Build.0 = Debug|x64
+		{E49EC05F-43C4-4B6D-8233-13B2EF190452}.Release|x64.ActiveCfg = Release|x64
+		{E49EC05F-43C4-4B6D-8233-13B2EF190452}.Release|x64.Build.0 = Release|x64
+		{FFED8F5A-6CE9-4666-B6AE-00B6B4BCE8D7}.Debug|x64.ActiveCfg = Debug|x64
+		{FFED8F5A-6CE9-4666-B6AE-00B6B4BCE8D7}.Debug|x64.Build.0 = Debug|x64
+		{FFED8F5A-6CE9-4666-B6AE-00B6B4BCE8D7}.Release|x64.ActiveCfg = Release|x64
+		{FFED8F5A-6CE9-4666-B6AE-00B6B4BCE8D7}.Release|x64.Build.0 = Release|x64
+		{D33D65A1-4BFE-4B3D-AB48-1A0D684E2BB0}.Debug|x64.ActiveCfg = Debug|x64
+		{D33D65A1-4BFE-4B3D-AB48-1A0D684E2BB0}.Debug|x64.Build.0 = Debug|x64
+		{D33D65A1-4BFE-4B3D-AB48-1A0D684E2BB0}.Release|x64.ActiveCfg = Release|x64
+		{D33D65A1-4BFE-4B3D-AB48-1A0D684E2BB0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

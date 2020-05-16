@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/icon.png</file>
+        <file>images/cps_bg.png</file>
+        <file>images/display_fit.png</file>
+        <file>images/display_no.png</file>
+        <file>images/exit.png</file>
+        <file>images/info.png</file>
+        <file>images/load_task.png</file>
+        <file>images/master_info.png</file>
+        <file>images/media_play.png</file>
+        <file>images/save.png</file>
+        <file>images/setting.png</file>
+        <file>images/openstop.png</file>
+        <file>images/openstandby.png</file>
+        <file>images/no_image.png</file>
+        <file>images/openplay.png</file>
+        <file>qss/site_cps.qss</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>icons/Camera.png</file>
+        <file>icons/default_class_icon.png</file>
+        <file>icons/default_package_icon.png</file>
+        <file>icons/error.png</file>
+        <file>icons/failed_display.png</file>
+        <file>icons/Group.png</file>
+        <file>icons/Image.png</file>
+        <file>icons/MasterConfiguration.png</file>
+        <file>icons/minus.png</file>
+        <file>icons/ok.png</file>
+        <file>icons/plus.png</file>
+        <file>icons/Setting.png</file>
+        <file>icons/TaskConfiguration.png</file>
+        <file>icons/Tool Properties.png</file>
+        <file>icons/warning.png</file>
+        <file>icons/Monitoring.png</file>
+        <file>icons/FullScreen.png</file>
+    </qresource>
+</RCC>

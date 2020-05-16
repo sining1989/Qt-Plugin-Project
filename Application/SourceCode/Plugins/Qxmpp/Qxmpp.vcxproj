@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D33D65A1-4BFE-4B3D-AB48-1A0D684E2BB0}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>qxmpp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\Lib</OutDir>
+    <IntDir>..\..\..\Intermediate\$ProjectName\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\$(Configuration)\</OutDir>
+    <IntDir>..\..\..\Intermediate\$ProjectName\</IntDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;QXMPP_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;base;client;server;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Networkd.lib;Qt5Xmld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;QXMPP_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;base;client;server;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;QXMPP_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Network.lib;Qt5Xml.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;QXMPP_LIB;QT_XML_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtXml;%(AdditionalIncludeDirectories)</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="base\QXmppArchiveIq.cpp" />
+    <ClCompile Include="base\QXmppBindIq.cpp" />
+    <ClCompile Include="base\QXmppBookmarkSet.cpp" />
+    <ClCompile Include="base\QXmppByteStreamIq.cpp" />
+    <ClCompile Include="base\QXmppCodec.cpp" />
+    <ClCompile Include="base\QXmppConstants.cpp" />
+    <ClCompile Include="base\QXmppDataForm.cpp" />
+    <ClCompile Include="base\QXmppDiscoveryIq.cpp" />
+    <ClCompile Include="base\QXmppElement.cpp" />
+    <ClCompile Include="base\QXmppEntityTimeIq.cpp" />
+    <ClCompile Include="base\QXmppIbbIq.cpp" />
+    <ClCompile Include="base\QXmppIq.cpp" />
+    <ClCompile Include="base\QXmppJingleIq.cpp" />
+    <ClCompile Include="base\QXmppLogger.cpp" />
+    <ClCompile Include="base\QXmppMamIq.cpp" />
+    <ClCompile Include="base\QXmppMessage.cpp" />
+    <ClCompile Include="base\QXmppMucIq.cpp" />
+    <ClCompile Include="base\QXmppNonSASLAuth.cpp" />
+    <ClCompile Include="base\QXmppPingIq.cpp" />
+    <ClCompile Include="base\QXmppPresence.cpp" />
+    <ClCompile Include="base\QXmppPubSubIq.cpp" />
+    <ClCompile Include="base\QXmppRegisterIq.cpp" />
+    <ClCompile Include="base\QXmppResultSet.cpp" />
+    <ClCompile Include="base\QXmppRosterIq.cpp" />
+    <ClCompile Include="base\QXmppRpcIq.cpp" />
+    <ClCompile Include="base\QXmppRtcpPacket.cpp" />
+    <ClCompile Include="base\QXmppRtpChannel.cpp" />
+    <ClCompile Include="base\QXmppRtpPacket.cpp" />
+    <ClCompile Include="base\QXmppSasl.cpp" />
+    <ClCompile Include="base\QXmppSessionIq.cpp" />
+    <ClCompile Include="base\QXmppSocks.cpp" />
+    <ClCompile Include="base\QXmppStanza.cpp" />
+    <ClCompile Include="base\QXmppStream.cpp" />
+    <ClCompile Include="base\QXmppStreamFeatures.cpp" />
+    <ClCompile Include="base\QXmppStreamInitiationIq.cpp" />
+    <ClCompile Include="base\QXmppStreamManagement.cpp" />
+    <ClCompile Include="base\QXmppStun.cpp" />
+    <ClCompile Include="base\QXmppUtils.cpp" />
+    <ClCompile Include="base\QXmppVCardIq.cpp" />
+    <ClCompile Include="base\QXmppVersionIq.cpp" />
+    <ClCompile Include="client\QXmppArchiveManager.cpp" />
+    <ClCompile Include="client\QXmppBookmarkManager.cpp" />
+    <ClCompile Include="client\QXmppCallManager.cpp" />
+    <ClCompile Include="client\QXmppCarbonManager.cpp" />
+    <ClCompile Include="client\QXmppClient.cpp" />
+    <ClCompile Include="client\QXmppClientExtension.cpp" />
+    <ClCompile Include="client\QXmppConfiguration.cpp" />
+    <ClCompile Include="client\QXmppDiscoveryManager.cpp" />
+    <ClCompile Include="client\QXmppEntityTimeManager.cpp" />
+    <ClCompile Include="client\QXmppInvokable.cpp" />
+    <ClCompile Include="client\QXmppMamManager.cpp" />
+    <ClCompile Include="client\QXmppMessageReceiptManager.cpp" />
+    <ClCompile Include="client\QXmppMucManager.cpp" />
+    <ClCompile Include="client\QXmppOutgoingClient.cpp" />
+    <ClCompile Include="client\QXmppRemoteMethod.cpp" />
+    <ClCompile Include="client\QXmppRosterManager.cpp" />
+    <ClCompile Include="client\QXmppRpcManager.cpp" />
+    <ClCompile Include="client\QXmppTransferManager.cpp" />
+    <ClCompile Include="client\QXmppVCardManager.cpp" />
+    <ClCompile Include="client\QXmppVersionManager.cpp" />
+    <ClCompile Include="server\QXmppDialback.cpp" />
+    <ClCompile Include="server\QXmppIncomingClient.cpp" />
+    <ClCompile Include="server\QXmppIncomingServer.cpp" />
+    <ClCompile Include="server\QXmppOutgoingServer.cpp" />
+    <ClCompile Include="server\QXmppPasswordChecker.cpp" />
+    <ClCompile Include="server\QXmppServer.cpp" />
+    <ClCompile Include="server\QXmppServerExtension.cpp" />
+    <ClCompile Include="server\QXmppServerPlugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\QXmppArchiveIq.h" />
+    <ClInclude Include="base\QXmppBindIq.h" />
+    <ClInclude Include="base\QXmppBookmarkSet.h" />
+    <ClInclude Include="base\QXmppByteStreamIq.h" />
+    <ClInclude Include="base\QXmppCodec_p.h" />
+    <ClInclude Include="base\QXmppConstants_p.h" />
+    <ClInclude Include="base\QXmppDataForm.h" />
+    <ClInclude Include="base\QXmppDiscoveryIq.h" />
+    <ClInclude Include="base\QXmppElement.h" />
+    <ClInclude Include="base\QXmppEntityTimeIq.h" />
+    <ClInclude Include="base\QXmppIbbIq.h" />
+    <ClInclude Include="base\QXmppIq.h" />
+    <ClInclude Include="base\QXmppJingleIq.h" />
+    <ClInclude Include="server\QXmppDialback.h" />
+    <QtMoc Include="server\QXmppServerPlugin.h" />
+    <QtMoc Include="server\QXmppServerExtension.h" />
+    <QtMoc Include="server\QXmppServer.h" />
+    <QtMoc Include="server\QXmppPasswordChecker.h" />
+    <QtMoc Include="server\QXmppOutgoingServer.h" />
+    <QtMoc Include="server\QXmppIncomingServer.h" />
+    <QtMoc Include="server\QXmppIncomingClient.h" />
+    <QtMoc Include="base\QXmppLogger.h" />
+    <ClInclude Include="base\QXmppMamIq.h" />
+    <ClInclude Include="base\QXmppMessage.h" />
+    <ClInclude Include="base\QXmppMucIq.h" />
+    <ClInclude Include="base\QXmppNonSASLAuth.h" />
+    <ClInclude Include="base\QXmppPingIq.h" />
+    <ClInclude Include="base\QXmppPresence.h" />
+    <ClInclude Include="base\QXmppPubSubIq.h" />
+    <ClInclude Include="base\QXmppRegisterIq.h" />
+    <ClInclude Include="base\QXmppResultSet.h" />
+    <ClInclude Include="base\QXmppRosterIq.h" />
+    <ClInclude Include="base\QXmppRpcIq.h" />
+    <ClInclude Include="base\QXmppRtcpPacket.h" />
+    <QtMoc Include="base\QXmppRtpChannel.h" />
+    <ClInclude Include="base\QXmppRtpPacket.h" />
+    <ClInclude Include="base\QXmppSasl_p.h" />
+    <ClInclude Include="base\QXmppSessionIq.h" />
+    <QtMoc Include="base\QXmppSocks.h" />
+    <ClInclude Include="base\QXmppStanza.h" />
+    <ClInclude Include="base\QXmppStanza_p.h" />
+    <QtMoc Include="base\QXmppStream.h" />
+    <ClInclude Include="base\QXmppStreamFeatures.h" />
+    <ClInclude Include="base\QXmppStreamInitiationIq_p.h" />
+    <ClInclude Include="base\QXmppStreamManagement_p.h" />
+    <QtMoc Include="base\QXmppStun.h" />
+    <QtMoc Include="base\QXmppStun_p.h" />
+    <ClInclude Include="base\QXmppUtils.h" />
+    <ClInclude Include="base\QXmppVCardIq.h" />
+    <ClInclude Include="base\QXmppVersionIq.h" />
+    <QtMoc Include="client\QXmppArchiveManager.h" />
+    <QtMoc Include="client\QXmppBookmarkManager.h" />
+    <QtMoc Include="client\QXmppCallManager.h" />
+    <QtMoc Include="client\QXmppCarbonManager.h" />
+    <QtMoc Include="client\QXmppClient.h" />
+    <QtMoc Include="client\QXmppClientExtension.h" />
+    <ClInclude Include="client\QXmppConfiguration.h" />
+    <QtMoc Include="client\QXmppDiscoveryManager.h" />
+    <QtMoc Include="client\QXmppEntityTimeManager.h" />
+    <QtMoc Include="client\QXmppInvokable.h" />
+    <QtMoc Include="client\QXmppMamManager.h" />
+    <QtMoc Include="client\QXmppMessageReceiptManager.h" />
+    <QtMoc Include="client\QXmppMucManager.h" />
+    <QtMoc Include="client\QXmppOutgoingClient.h" />
+    <QtMoc Include="client\QXmppRemoteMethod.h" />
+    <QtMoc Include="client\QXmppRosterManager.h" />
+    <QtMoc Include="client\QXmppRpcManager.h" />
+    <QtMoc Include="client\QXmppTransferManager.h" />
+    <QtMoc Include="client\QXmppTransferManager_p.h" />
+    <QtMoc Include="client\QXmppVCardManager.h" />
+    <QtMoc Include="client\QXmppVersionManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base\QXmppGlobal.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2015_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,5 @@
+1.创建.ts文件 Create New Traslation File
+2.将.ts文件转化为.qm文件
+lrelease.exe -verbose xx.ts -qm xx.qm
+
+注意：路径中不能包含中文
